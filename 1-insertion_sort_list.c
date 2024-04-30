@@ -1,7 +1,7 @@
 #include "sort.h"
 
 /**
- * insertion_sort_list - Sorts a doubly linked list of integers in ascending order
+ * insertion_sort_list - Sorts a linked list of integers in ascending order
  * @list: Pointer to a pointer to the head of the list
  */
 void insertion_sort_list(listint_t **list)
@@ -30,9 +30,11 @@ void insertion_sort_list(listint_t **list)
 
 listint_t *swap_node(listint_t *node, listint_t **list)
 {
-	listint_t *back = node->prev, *current = node;
-	/*NULL, 19, 48, 9, 71, 13, NULL*/
+	listint_t *back;
+	listint_t *current;
 
+	back = node->prev;
+	current = node;
 	back->next = current->next;
 	if (current->next)
 		current->next->prev = back;
